@@ -1,15 +1,20 @@
 export class NotificationModel {
+    id: number;
+    titulo: string;
+    mensaje?: string;
     usuario: string;
-    tipo: number;
-    mensaje: string;
+    leido: boolean;
     fecha: string;
-    link: string;
+    link?: string;
+    
 
     constructor(data?: any){
-        this.usuario = null;
-        this.tipo = null;
+        this.id = null;
+        this.titulo = null;
         this.mensaje = null;
-        this.fecha = null;
+        this.usuario = null; 
+        this.leido = null;
+        this.fecha = null;      
         this.link = null;
 
         if (typeof data !== 'undefined') {

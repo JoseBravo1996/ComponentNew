@@ -4,7 +4,8 @@ import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
 import { HttpClientModule } from '@angular/common/http';
-import { NavbarComponent } from './navbar/navbar.component';
+import { ReadMoreDirective } from './read-more/read-more.directive';
+
 
 @NgModule({
   declarations: [
