@@ -1,7 +1,7 @@
 import { AfterViewInit, Component, ElementRef, Input } from '@angular/core';
 
 @Component({
-  selector: 'read-more',
+  selector: 'nread-more',
   template: `
   <div [innerHTML]="text" [class.collapsed]="isCollapsed" [style.height]="isCollapsed ? maxHeight+'px' : 'auto'">
   </div>

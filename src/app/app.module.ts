@@ -5,6 +5,7 @@ import { NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
 import { HttpClientModule } from '@angular/common/http';
 import { ReadMoreDirective } from './read-more/read-more.directive';
+import { ReadMore2Component } from './read-more2/read-more2.component';
 
 
 @NgModule({

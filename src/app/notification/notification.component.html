@@ -10,7 +10,7 @@
                     <strong>Notificaciónes</strong>
                 </div>
                 <div class="list-group list-group-flush">
-                    <a [attr.href]="notification.link" class="list-group-item list-group-item-action" [ngClass]="[ notification.link ? 'active' : 'disabled']" *ngFor="let notification of notifications">
+                    <a [attr.href]="notification.link" class="list-group-item list-group-item-action" [ngClass]="[ notification.link ? 'active' : 'disabled']" *ngFor="let notification of notifications; let i = index">
                         <div class="media">
                             <div class="media-left">
                                 <div class="media-object">
@@ -20,25 +20,12 @@
                                 </div>
                             </div>
                             <div class="media-body">
-                                <strong class="notification-title">{{notification.usuario}}&nbsp;</strong><small>{{ notification.fecha | dateAgo }}</small>
+                                <strong class="notification-title">{{notification.usuario}}&nbsp;</strong><small>{{
+                                    notification.fecha | dateAgo }}</small>
+                                    <input class="form-check-input text-right" type="radio" name="flexRadioDefault" id="flexRadioDefault{{i}}" [checked]="notification.leido">
                                 <p class="notification-desc">{{notification.titulo}}</p>
                                 <div class="notification-meta">
-                                    <!-- <read-more [text]="notification.mensaje" [maxHeight]="250"></read-more> -->
-                                    <!-- <p read-more>{{notification.mensaje}}</p>    -->
-                                    <p read-more>
-                                        Start editing to see some magic happen :) Start editing to see some magic
-                                        happen :) Start editing to see some magic happen :) Start editing to see some
-                                        magic happen :) Start editing to see some magic happen :)
-                                        <a href="">Start editing to see some magic happen :)</a>
-                                        Start editing to see some magic happen :) Start editing to see some magic
-                                        happen :) Start editing to see some magic happen :) Start editing to see some
-                                        magic happen :) Start editing to see some magic happen :) Start editing to see
-                                        some magic happen :) Start editing to see some magic happen :) Start editing
-                                        to see some magic happen :) Start editing to see some magic happen :) Start
-                                        editing to see some magic happen :) Start editing to see some magic happen :)
-                                        Start editing to see some magic happen :)
-                                      </p> 
-                                                                   
+                                    <app-read-more *ngIf="notification.mensaje" [text]="notification.mensaje" maxLength="10"></app-read-more>
                                 </div>
                             </div>
                         </div>
@@ -51,24 +38,3 @@
         </div>
     </div>
 </div>
-
-
-
-
-<p read-more>
-    Start editing to see some magic happen :) Start editing to see some magic
-    happen :) Start editing to see some magic happen :) Start editing to see some
-    magic happen :) Start editing to see some magic happen :)
-    <a href="">Start editing to see some magic happen :)</a>
-    Start editing to see some magic happen :) Start editing to see some magic
-    happen :) Start editing to see some magic happen :) Start editing to see some
-    magic happen :) Start editing to see some magic happen :) Start editing to see
-    some magic happen :) Start editing to see some magic happen :) Start editing
-    to see some magic happen :) Start editing to see some magic happen :) Start
-    editing to see some magic happen :) Start editing to see some magic happen :)
-    Start editing to see some magic happen :)
-  </p>
-  
-  >
-  
-  
